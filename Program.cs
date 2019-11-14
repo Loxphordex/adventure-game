@@ -7,18 +7,21 @@ namespace adventure
     {
         static void Main(string[] args)
         {
-            while(true){
-                
-                // Object setup
-                var mainMenu = new MainMenu();
-                var playerState = new PlayerState();
+            // Object setup
+            var mainMenu = new MainMenu();
+            var playerState = new PlayerState();
+            var testLevel = new TestLevel();
 
-                mainMenu.Header();
+            mainMenu.Header();
+
+            while(true){
 
                 var quitter = Console.ReadLine();
                 if (quitter.ToLower() == "quit") {
                     return;
                 }
+
+                testLevel.FirstTestLevel();
             }
         }
     }
