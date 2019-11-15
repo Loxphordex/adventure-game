@@ -7,6 +7,7 @@ namespace adventure
     {
         static void Main(string[] args)
         {
+
             // Object setup
             var mainMenu = new MainMenu();
             var playerState = new PlayerState();
@@ -14,15 +15,11 @@ namespace adventure
 
             mainMenu.Header();
 
-            while(true){
-
-                var quitter = Console.ReadLine();
-                if (quitter.ToLower() == "quit") {
-                    return;
-                }
-
-                testLevel.FirstTestLevel();
+            var quitter = Console.ReadLine();
+            if (quitter.ToLower() == "quit") {
+                return;
             }
+            testLevel.FirstTestLevel(playerState);
         }
     }
 }
